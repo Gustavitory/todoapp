@@ -1,4 +1,5 @@
 const express=require("express")
+const routerLogin = require("./login")
 const routertasks = require("./tasks")
 const router=express.Router()
 
@@ -9,5 +10,6 @@ router.use((req,res,next)=>{
 })
 
 router.use("/tasks",routertasks);
+router.use("/login",routerLogin)
 
 module.exports=router
