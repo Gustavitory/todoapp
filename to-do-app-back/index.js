@@ -11,9 +11,9 @@ conn.sync({ alter: true,force:true })
         });
     })
     .then(()=>{
-        User.create({name:'gustavo',password:'12345',email:'correo'})
         Task.create({name:'tarea',description:'ololo'})
-        // bcrypt.compare('hola',bcrypt.hash('hola','coloco')).then(r=>console.log(r))
+        .then(task=>User.create({name:'gustavo',password:'12345',email:'correo@correo.com'}).then(user=>user.addTask(task.id)))
+        
         
     })
     .catch(e => console.log('ERROR :( ' + e));
